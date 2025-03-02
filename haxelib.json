@@ -1,0 +1,21 @@
+{
+	"name": "hxluajit-wrapper",
+	"url": "https://github.com/MAJigsaw77/hxluajit-wrapper",
+	"license": "MIT",
+	"tags": [
+		"cpp",
+		"luajit",
+		"wrapper",
+		"haxe"
+	],
+	"description": "A wrapper for hxluajit for a better integration with Haxe.",
+	"version": "1.0.0",
+	"releasenote": "First release.",
+	"contributors": [
+		"MAJigsaw77"
+	],
+	"dependencies": {
+		"hxcpp": "",
+		"hxluajit": ""
+	}
+}
