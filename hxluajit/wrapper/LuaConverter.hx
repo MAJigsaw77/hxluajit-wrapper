@@ -97,6 +97,8 @@ class LuaConverter
 				ret = LuaConverter.convertTable(L, idx);
 			case type if (type == Lua.TFUNCTION):
 				ret = new LuaFunction(cpp.Pointer.fromRaw(L), LuaL.ref(L, Lua.REGISTRYINDEX));
+			case type if (type == Lua.TUSERDATA || type == Lua.TLIGHTUSERDATA):
+				ret = cpp.Pointer.fromRaw(Lua.touserdata(L, idx));
 			default:
 				ret = null;
 		}
@@ -117,7 +119,7 @@ class LuaConverter
 			{
 				if (Lua.type(L, -2) == Lua.TNUMBER)
 				{
-					final index:Int = Lua.tointeger(L, -2);
+					final index:Lua_Integer = Lua.tointeger(L, -2);
 
 					if (index < 0)
 						isArray = false;
